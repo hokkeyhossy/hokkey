@@ -57,9 +57,9 @@ public class MoveObject : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		myTrans.Translate(m_moveSpeed*Time.deltaTime);
-		m_moveSpeed=new Vector3(0,0,0);
-		myRigid.velocity=new Vector3(0,0,0);
+		//myRigid.velocity=new Vector3(0,0,0);
+		myRigid.AddForce(m_moveSpeed);
+		//m_moveSpeed=new Vector3(0,0,0);
 
 	}
 }
