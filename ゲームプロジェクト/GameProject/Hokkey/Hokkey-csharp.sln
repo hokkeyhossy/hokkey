@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{EF5050A5-A786-FFB7-1A58-A06489C13ED9}") = "Hokkey", "Assembly-CSharp-vs.csproj", "{1C139D24-D5A5-0867-03A0-D2A4D7604588}"
 EndProject
+Project("{EF5050A5-A786-FFB7-1A58-A06489C13ED9}") = "Hokkey", "Assembly-CSharp-Editor-vs.csproj", "{1B3B3D5C-8105-D1C6-81DC-847F20944488}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{1C139D24-D5A5-0867-03A0-D2A4D7604588}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C139D24-D5A5-0867-03A0-D2A4D7604588}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C139D24-D5A5-0867-03A0-D2A4D7604588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3B3D5C-8105-D1C6-81DC-847F20944488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3B3D5C-8105-D1C6-81DC-847F20944488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3B3D5C-8105-D1C6-81DC-847F20944488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3B3D5C-8105-D1C6-81DC-847F20944488}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-									GlobalSection(MonoDevelopProperties) = preSolution
+																GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

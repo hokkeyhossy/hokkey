@@ -5,10 +5,15 @@ public class BallMove : MonoBehaviour
 {
 	public Vector3 FirstMoveForce;
 	public Rigidbody myRigid;
+
+	public GameManager myManager;
 	// Use this for initialization
 	void Start () 
 	{
-		myRigid.AddForce(FirstMoveForce);
+		GameObject obj=GameObject.Find("GameManagerHolder");;
+
+		myManager = obj.GetComponent <GameManager>();
+		//myRigid.AddForce(FirstMoveForce);
 	}
 	
 	// Update is called once per frame
@@ -16,4 +21,11 @@ public class BallMove : MonoBehaviour
 	{
 	
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		myManager.SetisBall(false);
+		Destroy(this);
+	}
+
 }
