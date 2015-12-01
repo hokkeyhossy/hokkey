@@ -64,6 +64,7 @@ public class BallMove : MonoBehaviour
 
 		if(PlayerCnt==PlayerCntMax)
 		{
+			AudioManager.Instance.PlaySE("SE_YARARE");
 			//マネージャーに消えることを伝える
 			myManager.SetisBall(false);
 			//自身を破壊する
@@ -73,18 +74,18 @@ public class BallMove : MonoBehaviour
 
 	void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.name=="Wall")
+		//if(other.gameObject.name=="Wall")
 		{
-			//Instantiate(Effect,myRigid.position,myRigid.rotation);
+			AudioManager.Instance.PlaySE("SE_HIT");
 		}
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-
-		//マネージャーに消えることを伝える
-		myManager.SetisBall(false);
+		AudioManager.Instance.PlaySE("SE_YARARE");
 		//自身を破壊する
 		Destroy(this.gameObject);
+		//マネージャーに消えることを伝える
+		myManager.SetisBall(false);
 	}
 }

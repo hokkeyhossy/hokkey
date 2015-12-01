@@ -12,7 +12,7 @@ Platform assembly: C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現�
 Loading C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\HokkeyProt_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\HokkeyProt_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\HokkeyProt_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.047 seconds
+- Completed reload, in  0.106 seconds
 desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -20,4 +20,16 @@ desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
 Platform assembly: C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\HokkeyProt_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\HokkeyProt_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1520 -> priority: 1 
+  Thread -> id: 16d4 -> priority: 1 
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.760345 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 317.
+Total: 0.303375 ms (FindLiveObjects: 0.024220 ms CreateObjectMapping: 0.016010 ms MarkObjects: 0.230302 ms  DeleteObjects: 0.022168 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.559951 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 317.
+Total: 0.293112 ms (FindLiveObjects: 0.051315 ms CreateObjectMapping: 0.017652 ms MarkObjects: 0.206902 ms  DeleteObjects: 0.016010 ms)
+

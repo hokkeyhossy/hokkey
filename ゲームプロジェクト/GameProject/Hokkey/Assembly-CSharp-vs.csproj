@@ -84,6 +84,9 @@
      <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
      <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+     <Compile Include="Assets\Scripts\Common\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Common\CameraFade.cs" />
+     <Compile Include="Assets\Scripts\Common\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\Ball\BallMove.cs" />
      <Compile Include="Assets\Scripts\Game\Effect\EffectDel.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\GameManager.cs" />
