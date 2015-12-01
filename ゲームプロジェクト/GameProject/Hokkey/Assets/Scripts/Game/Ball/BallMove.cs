@@ -32,10 +32,12 @@ public class BallMove : MonoBehaviour
 	void Start () 
 	{
 		//ゲームマネージャークラスの取得
-		GameObject obj=GameObject.Find("GameManagerHolder");;
+		GameObject obj=GameObject.Find("GameManagerHolder");
+
 		myManager = obj.GetComponent <GameManager>();
+		FirstMoveForce=myManager.BaseTrans_().position-this.gameObject.GetComponent <Transform>().position;
 		//初期の加速の反映
-		myRigid.AddForce(FirstMoveForce);
+		myRigid.AddForce(FirstMoveForce*5);
 		PlayerCnt=0;
 	}
 	
@@ -60,6 +62,7 @@ public class BallMove : MonoBehaviour
 		else if(other.gameObject.tag!="Floor")
 		{
 			PlayerCnt=0;
+
 		}
 
 		if(PlayerCnt==PlayerCntMax)
@@ -77,6 +80,11 @@ public class BallMove : MonoBehaviour
 		//if(other.gameObject.name=="Wall")
 		{
 			AudioManager.Instance.PlaySE("SE_HIT");
+		}
+
+		if(other.gameObject.tag=="Floor")
+		{
+			myRigid.velocity = new Vector3(myRigid.velocity.x,0,myRigid.velocity.z);
 		}
 	}
 

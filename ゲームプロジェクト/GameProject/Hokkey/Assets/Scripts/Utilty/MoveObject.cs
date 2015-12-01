@@ -33,6 +33,8 @@ public class MoveObject : MonoBehaviour
 	//摩擦力
 	public float InertiaPow;
 
+	public Animator myAnim;
+
 	//-----------------------------------------
 	// 初期化処理
 	//-----------------------------------------
@@ -69,6 +71,8 @@ public class MoveObject : MonoBehaviour
 		{
 			m_moveSpeed.z=MoveSpeed;
 		}
+
+		myAnim.SetBool("isTransform",Input.GetKeyDown(KeyCode.M));
 	}
 
 

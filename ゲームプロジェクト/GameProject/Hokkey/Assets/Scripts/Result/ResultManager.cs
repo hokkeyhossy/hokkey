@@ -18,6 +18,7 @@ public class ResultManager : MonoBehaviour {
 		{
 			if(Input.anyKeyDown)
 			{
+				LiveFlag=false;
 				CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Title");});
 			}
 		}
