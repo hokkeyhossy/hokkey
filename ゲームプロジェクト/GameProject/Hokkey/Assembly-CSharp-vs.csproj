@@ -85,6 +85,7 @@
      <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
      <Compile Include="Assets\Scripts\Game\Ball\BallMove.cs" />
+     <Compile Include="Assets\Scripts\Game\Effect\EffectDel.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\Game_Global.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\TimeManager.cs" />
