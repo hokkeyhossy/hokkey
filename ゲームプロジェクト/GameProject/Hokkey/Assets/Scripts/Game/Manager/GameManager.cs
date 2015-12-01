@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 	public bool isDebug;
 	public KeyCode RefreshKey;
 	public GameObject Ball;
+	private GameObject ActiveBall;
 	private bool isBall;
 	public Transform[] points;
 
@@ -33,5 +34,8 @@ public class GameManager : MonoBehaviour
 	
 	}
 
-	public void SetisBall(bool value){isBall=value;}
+	public void SetisBall(bool value)
+	{
+		isBall=value;
+	}
 }
