@@ -92,6 +92,8 @@
      <Compile Include="Assets\Scripts\Game\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\Game_Global.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\Result\ResultManager.cs" />
+     <Compile Include="Assets\Scripts\Title\TitleManager.cs" />
      <Compile Include="Assets\Scripts\Utilty\MoveObject.cs" />
      <None Include="Assets\Imports\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />

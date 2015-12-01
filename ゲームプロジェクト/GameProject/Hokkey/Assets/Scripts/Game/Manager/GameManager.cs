@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
 			if(isDebug&&(Input.GetKeyDown(RefreshKey)))
 			{
-				CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Game");});
+				CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Result");});
 			}
 		}
 	}
