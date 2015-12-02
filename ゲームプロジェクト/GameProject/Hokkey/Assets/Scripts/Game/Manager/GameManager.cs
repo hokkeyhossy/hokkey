@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 	public KeyCode RefreshKey;
 	public GameObject Ball;
 	private GameObject ActiveBall;
-	private bool isBall;
 	public Transform[] points;
 	private float RespornCnt;
 	public float RespornTime;
@@ -35,7 +34,6 @@ public class GameManager : MonoBehaviour
 		LiveFlag=false;
 		CameraFade.StartAlphaFade(Color.black, true,2.0f, 0f,()=>ChengeFlag(true));
 		RespornCnt=0;
-		isBall=false;
 		AudioManager.Instance.PlayBGM("BGM_TEST");
 	}
 	
@@ -49,7 +47,6 @@ public class GameManager : MonoBehaviour
 				if(RespornCnt>=RespornTime)
 				{
 					RespornCnt=0;
-					isBall=true;
 					BallCnt++;
 					int idx=Random.Range(0,points.Length);
 					Instantiate(Ball,points[idx].position,points[idx].rotation);
@@ -98,8 +95,6 @@ public class GameManager : MonoBehaviour
 
 	public void SetisBall(bool value)
 	{
-		isBall=value;
-
 		if(!value)
 		{
 			BallCnt--;

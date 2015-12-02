@@ -3,10 +3,13 @@ using System.Collections;
 
 public class TitleManager : MonoBehaviour
 {
+
+
 	static private bool LiveFlag;
 	// Use this for initialization
 	void Start () 
 	{
+		AudioManager.Instance.PlayBGM("BGM_TITLE");
 		LiveFlag=false;
 		CameraFade.StartAlphaFade(Color.black, true,2.0f, 0f,()=>ChengeFlag(true));
 	}
@@ -18,8 +21,10 @@ public class TitleManager : MonoBehaviour
 		{
 			if(Input.anyKeyDown)
 			{
+				AudioManager.Instance.PlaySE("SE_ENTER");
+				AudioManager.Instance.StopBGM();
 				LiveFlag=false;
-				CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Game");});
+				CameraFade.StartAlphaFade(Color.black, false, 3.0f, 0f,()=>{Application.LoadLevel("Game");});
 			}
 		}
 	}
