@@ -94,8 +94,10 @@
      <Compile Include="Assets\Scripts\Game\Manager\TimeManager.cs" />
      <Compile Include="Assets\Scripts\Result\ResultManager.cs" />
      <Compile Include="Assets\Scripts\Title\TitleManager.cs" />
+     <Compile Include="Assets\Scripts\Utilty\BlinkingObject.cs" />
      <Compile Include="Assets\Scripts\Utilty\FloatingObject.cs" />
      <Compile Include="Assets\Scripts\Utilty\MoveObject.cs" />
+     <Compile Include="Assets\Scripts\Utilty\MyMath.cs" />
      <None Include="Assets\Imports\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

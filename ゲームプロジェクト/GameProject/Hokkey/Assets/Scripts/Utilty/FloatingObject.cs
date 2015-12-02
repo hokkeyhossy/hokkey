@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class FloatingObject : MonoBehaviour 
 {
-	public Transform myTrans;
+	public Image myTrans;
+	public float Interval;
 	private float ypos;
+	private float xpos;
 	private bool isActive;
+	public bool isLength;
 
 	// Use this for initialization
 	void Start () 
 	{
 		Active();
-		ypos=myTrans.position.y;
+		ypos=myTrans.transform.position.y;
+		xpos=myTrans.transform.position.x;
 	}
 	
 	// Update is called once per frame
@@ -19,10 +24,19 @@ public class FloatingObject : MonoBehaviour
 	{
 		if(isActive)
 		{
-			ypos = Mathf.Sin (Time.frameCount / 10.0f);
-			ypos *= 0.01f;
-			Vector3 vector = new Vector3(0.0f,ypos,0.0f);
-			myTrans.position += vector;
+			float l_pos= Mathf.Sin (Time.frameCount / Interval);;
+			Vector3 vector;
+			if(isLength)
+			{
+				ypos+=l_pos;
+				vector = new Vector3(myTrans.transform.position.x,ypos,myTrans.transform.position.z);
+			}
+			else
+			{
+				xpos+=l_pos;
+				vector = new Vector3(xpos,myTrans.transform.position.y,myTrans.transform.position.z);
+			}
+			myTrans.transform.position = vector;
 		}
 	}
 
