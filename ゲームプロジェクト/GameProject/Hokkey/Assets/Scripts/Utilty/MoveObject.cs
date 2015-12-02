@@ -72,7 +72,7 @@ public class MoveObject : MonoBehaviour
 			m_moveSpeed.z=MoveSpeed;
 		}
 
-		myAnim.SetBool("isTransform",Input.GetKeyDown(KeyCode.M));
+		myAnim.SetBool("isTransform",Input.GetKeyDown(KeyCode.U));
 	}
 
 

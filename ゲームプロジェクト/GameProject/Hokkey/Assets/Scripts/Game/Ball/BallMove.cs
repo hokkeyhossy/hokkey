@@ -37,7 +37,7 @@ public class BallMove : MonoBehaviour
 		myManager = obj.GetComponent <GameManager>();
 		FirstMoveForce=myManager.BaseTrans_().position-this.gameObject.GetComponent <Transform>().position;
 		//初期の加速の反映
-		myRigid.AddForce(FirstMoveForce*5);
+		myRigid.AddForce(FirstMoveForce);
 		PlayerCnt=0;
 	}
 	
@@ -67,11 +67,17 @@ public class BallMove : MonoBehaviour
 
 		if(PlayerCnt==PlayerCntMax)
 		{
-			AudioManager.Instance.PlaySE("SE_YARARE");
-			//マネージャーに消えることを伝える
-			myManager.SetisBall(false);
-			//自身を破壊する
-			Destroy(this.gameObject);
+			//AudioManager.Instance.PlaySE("SE_YARARE");
+			if(this.gameObject.layer==8)
+			{
+				//マネージャーに消えることを伝える
+				myManager.SetisBall(false,false);
+			}
+			else
+			{
+				//マネージャーに消えることを伝える
+				myManager.SetisBall(false,true);
+			}
 		}
 	}
 
@@ -90,10 +96,20 @@ public class BallMove : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		AudioManager.Instance.PlaySE("SE_YARARE");
+
+		//AudioManager.Instance.PlaySE("SE_YARARE");
 		//自身を破壊する
 		Destroy(this.gameObject);
-		//マネージャーに消えることを伝える
-		myManager.SetisBall(false);
+
+		if(this.gameObject.layer==8)
+		{
+			//マネージャーに消えることを伝える
+			myManager.SetisBall(false,false);
+		}
+		else
+		{
+			//マネージャーに消えることを伝える
+			myManager.SetisBall(false,true);
+		}
 	}
 }

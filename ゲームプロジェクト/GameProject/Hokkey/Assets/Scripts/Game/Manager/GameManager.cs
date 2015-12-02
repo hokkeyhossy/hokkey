@@ -5,35 +5,40 @@ public class GameManager : MonoBehaviour
 {
 	public bool isDebug;
 	public KeyCode RefreshKey;
+
 	public GameObject Ball;
+	public GameObject vBall;
+
 	private GameObject ActiveBall;
 	public Transform[] points;
 	private float RespornCnt;
+	private float vRespornCnt;
 	public float RespornTime;
 	static private bool LiveFlag;
-	private int BallMax;
+	public int BallMax;
+	public int VBallMax;
 
-	int BallCnt;
+	private int BallCnt;
+	private int vBallCnt;
 
 	public Transform baseTrans;
 
 	float MAXCnt;
-	float MaxMax;
+	public float MaxMax;
 	bool isMax;
 
 	// Use this for initialization
 	void Start () 
 	{
 		MAXCnt=0;
-		MaxMax=3;
 		isMax=false;
 
-
-		BallMax=2;
 		BallCnt=0;
+		vBallCnt=0;
 		LiveFlag=false;
 		CameraFade.StartAlphaFade(Color.black, true,2.0f, 0f,()=>ChengeFlag(true));
 		RespornCnt=0;
+		vRespornCnt=0;
 		AudioManager.Instance.PlayBGM("BGM_TEST");
 	}
 	
@@ -42,6 +47,22 @@ public class GameManager : MonoBehaviour
 	{
 		if(LiveFlag)
 		{
+			if(isMax&&vBallCnt<VBallMax)
+			{
+				if(vRespornCnt>=RespornTime)
+				{
+					vRespornCnt=0;
+					vBallCnt++;
+					int idx=Random.Range(0,points.Length);
+					Instantiate(vBall,points[idx].position,points[idx].rotation);
+				}
+
+				else
+				{
+					vRespornCnt+=Time.deltaTime;
+				}
+			}
+
 			if(BallCnt<BallMax)
 			{
 				if(RespornCnt>=RespornTime)
@@ -64,20 +85,21 @@ public class GameManager : MonoBehaviour
 				CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Result");});
 			}
 
-			if(Input.GetKeyDown(KeyCode.P))
+			if(Input.GetKeyDown(KeyCode.Y))
 			{
 				if(!isMax)
 				{
-					BallMax=50;
-					RespornTime=0.1f;
+					RespornTime=0.01f;
 					MAXCnt=0;
 					isMax=true;
 				}
+			}
 
+			if(isMax)
+			{
 				MAXCnt++;
 				if(MAXCnt>MaxMax)
 				{
-					BallMax=2;
 					RespornTime=0.5f;
 					MAXCnt=0;
 					isMax=false;
@@ -93,11 +115,19 @@ public class GameManager : MonoBehaviour
 		LiveFlag = Flag;
 	}
 
-	public void SetisBall(bool value)
+	public void SetisBall(bool value,bool isVBall)
 	{
 		if(!value)
 		{
-			BallCnt--;
+			if(!isVBall)
+			{
+				BallCnt--;
+			}
+
+			else
+			{
+				vBallCnt--;
+			}
 		}
 	}
 
