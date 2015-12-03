@@ -89,9 +89,14 @@
      <Compile Include="Assets\Scripts\Common\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\Ball\BallMove.cs" />
      <Compile Include="Assets\Scripts\Game\Effect\EffectDel.cs" />
+     <Compile Include="Assets\Scripts\Game\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\Game_Global.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\Game\MoveWall\MoveWall.cs" />
+     <Compile Include="Assets\Scripts\Game\MoveWall\OpenWall.cs" />
+     <Compile Include="Assets\Scripts\Game\MoveWall\PlayerDestroy.cs" />
+     <Compile Include="Assets\Scripts\GameOver\GameOverMAnager.cs" />
      <Compile Include="Assets\Scripts\Result\ResultManager.cs" />
      <Compile Include="Assets\Scripts\Title\TitleManager.cs" />
      <Compile Include="Assets\Scripts\Utilty\BlinkingObject.cs" />

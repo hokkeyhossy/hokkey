@@ -67,7 +67,7 @@ public class BallMove : MonoBehaviour
 
 		if(PlayerCnt==PlayerCntMax)
 		{
-			//AudioManager.Instance.PlaySE("SE_YARARE");
+			AudioManager.Instance.PlaySE("SE_YARARE");
 			if(this.gameObject.layer==8)
 			{
 				//マネージャーに消えることを伝える
@@ -83,6 +83,7 @@ public class BallMove : MonoBehaviour
 
 	void OnCollisionEnter(Collision other)
 	{
+
 		//if(other.gameObject.name=="Wall")
 		{
 			AudioManager.Instance.PlaySE("SE_HIT");
@@ -91,13 +92,38 @@ public class BallMove : MonoBehaviour
 		if(other.gameObject.tag=="Floor")
 		{
 			myRigid.velocity = new Vector3(myRigid.velocity.x,0,myRigid.velocity.z);
+			myRigid.constraints = RigidbodyConstraints.FreezePositionY;
+		}
+
+		if(other.gameObject.tag=="Ball")
+		{
+			Vector3 PlayerPos=other.gameObject.GetComponent<Transform>().position;
+			Vector3 Spd=myRigid.transform.position-PlayerPos;
+			Spd*=18;
+			myRigid.velocity=new Vector3(Spd.x,myRigid.velocity.y,Spd.z);
+		}
+
+		if(other.gameObject.name=="Cylinder")
+		{
+			Vector3 PlayerPos=other.gameObject.GetComponent<Transform>().position;
+			Vector3 Spd=myRigid.transform.position-PlayerPos;
+			Spd*=18;
+			myRigid.velocity=new Vector3(Spd.x,myRigid.velocity.y,Spd.z);
+		}
+
+		if(other.gameObject.name=="Player")
+		{
+			Vector3 PlayerPos=other.gameObject.GetComponent<Transform>().position;
+			Vector3 Spd=myRigid.transform.position-PlayerPos;
+			Spd*=23;
+			myRigid.velocity=new Vector3(Spd.x,myRigid.velocity.y,Spd.z);
 		}
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
 
-		//AudioManager.Instance.PlaySE("SE_YARARE");
+		AudioManager.Instance.PlaySE("SE_YARARE");
 		//自身を破壊する
 		Destroy(this.gameObject);
 

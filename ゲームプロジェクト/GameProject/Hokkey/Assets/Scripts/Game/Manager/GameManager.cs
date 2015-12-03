@@ -79,12 +79,6 @@ public class GameManager : MonoBehaviour
 				}
 			}
 
-			if(isDebug&&(Input.GetKeyDown(RefreshKey)))
-			{
-				LiveFlag=false;
-				CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Result");});
-			}
-
 			if(Input.GetKeyDown(KeyCode.Y))
 			{
 				if(!isMax)
@@ -139,5 +133,17 @@ public class GameManager : MonoBehaviour
 	public void SetBallMax(int Max)
 	{
 		BallMax=Max;
+	}
+
+	public void GameEnd()
+	{
+		LiveFlag=false;
+		CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Gameover");});
+	}
+
+	public void GameCrea()
+	{
+		LiveFlag=false;
+		CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Result");});
 	}
 }

@@ -33,13 +33,18 @@ public class MoveObject : MonoBehaviour
 	//摩擦力
 	public float InertiaPow;
 
-	public Animator myAnim;
+	public ParticleSystem myEffect;
+
+	private bool isDeath;
+	private float DeathTime;
 
 	//-----------------------------------------
 	// 初期化処理
 	//-----------------------------------------
 	void Start ()
 	{
+		myEffect.enableEmission=false;
+		isDeath=false;
 		//移動速度を格納する変数を0で初期化
 		m_moveSpeed=new Vector3(0,0,0);
 	}
@@ -49,30 +54,48 @@ public class MoveObject : MonoBehaviour
 	//-----------------------------------------
 	void Update ()
 	{
-		m_moveSpeed=new Vector3(0,0,0);
+		if(!isDeath)
+		{
+			m_moveSpeed=new Vector3(0,0,0);
 
-		//入力に合わせて移動速度を計算
-		if(Input.GetKey(KEY_MOVE_LEFT))
-		{
-			m_moveSpeed.x=-MoveSpeed;
-		}
+			//入力に合わせて移動速度を計算
+			if(Input.GetKey(KEY_MOVE_LEFT))
+			{
+				m_moveSpeed.x=-MoveSpeed;
+			}
 		
-		if(Input.GetKey(KEY_MOVE_RIGHT))
-		{
-			m_moveSpeed.x=MoveSpeed;
-		}
-		
-		if(Input.GetKey(KEY_MOVE_DOWN))
-		{
-			m_moveSpeed.z=-MoveSpeed;
-		}
-		
-		if(Input.GetKey(KEY_MOVE_UP))
-		{
-			m_moveSpeed.z=MoveSpeed;
+			if(Input.GetKey(KEY_MOVE_RIGHT))
+			{
+				m_moveSpeed.x=MoveSpeed;
+			}
+
+//			if(Input.GetKey(KEY_MOVE_UP))
+//			{
+//				m_moveSpeed.z=-MoveSpeed;
+//			}
+			
+//			if(Input.GetKey(KEY_MOVE_DOWN))
+//			{
+//				m_moveSpeed.z=MoveSpeed;
+//			}
 		}
 
-		myAnim.SetBool("isTransform",Input.GetKeyDown(KeyCode.U));
+		else
+		{
+			if(DeathTime>1)
+			{
+				GameObject obj=GameObject.Find("GameManagerHolder");
+				
+				obj.GetComponent <GameManager>().GameEnd();
+
+				Destroy(this.gameObject);
+			}
+
+			else
+			{
+				DeathTime+=Time.deltaTime;
+			}
+		}
 	}
 
 
@@ -85,4 +108,25 @@ public class MoveObject : MonoBehaviour
 		myRigid.AddForce(m_moveSpeed,ForceMode.VelocityChange);
 	}
 
+	public void PlayerDestroy()
+	{
+		this.gameObject.GetComponent <Renderer>().enabled=false;
+		isDeath=true;
+		DeathTime=0;
+		myEffect.enableEmission=true;
+		myEffect.Play();
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		
+		if(other.gameObject.tag=="Crea")
+		{
+			GameObject obj=GameObject.Find("GameManagerHolder");
+			
+			obj.GetComponent <GameManager>().GameCrea();
+			AudioManager.Instance.PlaySE("SE_HIT");
+		}
+	
+	}
 }
