@@ -14,8 +14,9 @@ public class ChainManager : SingletonMonoBehaviour<ChainManager>
 	// Use this for initialization
 	void Start () 
 	{
-		NowTime=0;
+		NowTime=chainTime;
 		MyScore=0;
+		AlphaValue=0;
 		if(this != Instance)
 		{
 			Destroy(this);
@@ -37,7 +38,7 @@ public class ChainManager : SingletonMonoBehaviour<ChainManager>
 	public void SetScore(float Value)
 	{
 		NowTime=0;
-		AlphaValue=255;
+		AlphaValue=1;
 		MyScore=Value;
 		CheckLenge();
 	}
@@ -45,7 +46,7 @@ public class ChainManager : SingletonMonoBehaviour<ChainManager>
 	public void AddScore(float Value)
 	{
 		NowTime=0;
-		AlphaValue=255;
+		AlphaValue=1;
 		MyScore+=Value;
 		CheckLenge();
 	}

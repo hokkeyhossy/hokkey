@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		ChainManager.Instance.ResetScore();
+		ScoreManager.Instance.ResetScore();
 		MAXCnt=0;
 		isMax=false;
 

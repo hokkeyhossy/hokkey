@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Enemy : MonoBehaviour 
@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
 
 	private OpenWall wall1;
 	private OpenWall wall2;
+
+	public float DamagePoint;
+	public float ScorePoint;
 
 	// Use this for initialization
 	void Start () 
@@ -29,8 +32,10 @@ public class Enemy : MonoBehaviour
 	{
 		if(other.gameObject.tag=="Ball")
 		{
-			wall1.SetOpenValue(1);
-			wall2.SetOpenValue(1);
+			ScoreManager.Instance.AddScore(ScorePoint);
+			ChainManager.Instance.AddScore(1);
+			wall1.SetOpenValue(DamagePoint);
+			wall2.SetOpenValue(DamagePoint);
 		}
 	}
 }

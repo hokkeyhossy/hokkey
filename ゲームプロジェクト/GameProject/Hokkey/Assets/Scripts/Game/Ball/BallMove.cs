@@ -122,20 +122,22 @@ public class BallMove : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-
-		AudioManager.Instance.PlaySE("SE_YARARE");
-		//自身を破壊する
-		Destroy(this.gameObject);
-
-		if(this.gameObject.layer==8)
+		if(other.tag=="DethPoint")
 		{
-			//マネージャーに消えることを伝える
-			myManager.SetisBall(false,false);
-		}
-		else
-		{
-			//マネージャーに消えることを伝える
-			myManager.SetisBall(false,true);
+			AudioManager.Instance.PlaySE("SE_YARARE");
+			//自身を破壊する
+			Destroy(this.gameObject);
+
+			if(this.gameObject.layer==8)
+			{
+				//マネージャーに消えることを伝える
+				myManager.SetisBall(false,false);
+			}
+			else
+			{
+				//マネージャーに消えることを伝える
+				myManager.SetisBall(false,true);
+			}
 		}
 	}
 }

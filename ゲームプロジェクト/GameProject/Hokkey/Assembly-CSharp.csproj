@@ -90,9 +90,13 @@
      <Compile Include="Assets\Scripts\Game\Ball\BallMove.cs" />
      <Compile Include="Assets\Scripts\Game\Effect\EffectDel.cs" />
      <Compile Include="Assets\Scripts\Game\Enemy\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Game\Manager\ChainManager.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\Game_Global.cs" />
+     <Compile Include="Assets\Scripts\Game\Manager\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\Game\Manager\UI_ChainManager.cs" />
+     <Compile Include="Assets\Scripts\Game\Manager\UI_ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Game\MoveWall\MoveWall.cs" />
      <Compile Include="Assets\Scripts\Game\MoveWall\OpenWall.cs" />
      <Compile Include="Assets\Scripts\Game\MoveWall\PlayerDestroy.cs" />
