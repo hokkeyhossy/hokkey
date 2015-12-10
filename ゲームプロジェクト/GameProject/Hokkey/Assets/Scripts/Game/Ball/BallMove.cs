@@ -108,7 +108,7 @@ public class BallMove : MonoBehaviour
 			Vector3 PlayerPos=other.gameObject.GetComponent<Transform>().position;
 			Vector3 Spd=myRigid.transform.position-PlayerPos;
 			Spd*=18;
-			myRigid.velocity=new Vector3(Spd.x,myRigid.velocity.y,Spd.z);
+			//myRigid.velocity=new Vector3(Spd.x,myRigid.velocity.y,Spd.z);
 		}
 
 		if(other.gameObject.name=="Player")

@@ -1,13 +1,29 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class GameOverMAnager : MonoBehaviour {
+public class GameOverMAnager : MonoBehaviour 
+{
 
+	private const int Mode_Game=0;
+	private const int Mode_Title=1;
 	static private bool LiveFlag;
+	public Image[] Item;
+	private int ItemLength;
+	private int NowChoiceItem;
 	// Use this for initialization
 	void Start () 
 	{
+		NowChoiceItem=0;
+		ItemLength=Item.Length;
 		LiveFlag=false;
+		for(int i=0;i<ItemLength;i++)
+		{
+			Item[i].GetComponent <BlinkingObject>().UnActive();
+		}
+		
+		Item[NowChoiceItem].GetComponent <BlinkingObject>().Active();
+
 		CameraFade.StartAlphaFade(Color.black, true,2.0f, 0f,()=>ChengeFlag(true));
 	}
 	
@@ -16,10 +32,44 @@ public class GameOverMAnager : MonoBehaviour {
 	{
 		if(LiveFlag)
 		{
-			if(Input.anyKeyDown)
+			if(Input.GetKeyDown(KeyCode.Return))
 			{
 				LiveFlag=false;
-				CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Title");});
+				switch(NowChoiceItem)
+				{
+				case Mode_Game:
+					CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Game");});
+					break;
+				case Mode_Title:
+					CameraFade.StartAlphaFade(Color.black, false, 2.0f, 0f,()=>{Application.LoadLevel("Title");});
+					break;
+				}
+
+			}
+
+			if(Input.GetKeyDown(KeyCode.W))
+			{
+				NowChoiceItem--;
+				if(NowChoiceItem<0)
+				{
+					NowChoiceItem=0;
+					return;
+				}
+				Item[NowChoiceItem].GetComponent <BlinkingObject>().Active();
+				Item[NowChoiceItem+1].GetComponent <BlinkingObject>().UnActive();
+			}
+
+			if(Input.GetKeyDown(KeyCode.S))
+			{
+				NowChoiceItem++;
+				if(NowChoiceItem==ItemLength)
+				{
+					NowChoiceItem--;
+					return;
+				}
+				
+				Item[NowChoiceItem].GetComponent <BlinkingObject>().Active();
+				Item[NowChoiceItem-1].GetComponent <BlinkingObject>().UnActive();
 			}
 		}
 	}
