@@ -12,9 +12,10 @@ public class ScoreManager : SingletonMonoBehaviour<ScoreManager>
 		MyScore=0;
 		if(this != Instance)
 		{
-			Destroy(this);
+			Destroy(this.gameObject);
 			return;
 		}
+		DontDestroyOnLoad(this.gameObject);
 	}
 
 	public void SetScore(float Value)

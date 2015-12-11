@@ -9,7 +9,7 @@ public class TitleManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		AudioManager.Instance.PlayBGM("BGM_TITLE");
+		AudioManager.Instance.PlayBGM("TitleBGM");
 		LiveFlag=false;
 		CameraFade.StartAlphaFade(Color.black, true,2.0f, 0f,()=>ChengeFlag(true));
 	}
@@ -21,7 +21,7 @@ public class TitleManager : MonoBehaviour
 		{
 			if(Input.anyKeyDown)
 			{
-				AudioManager.Instance.PlaySE("SE_ENTER");
+				AudioManager.Instance.PlaySE("TitleSelect");
 				AudioManager.Instance.StopBGM();
 				LiveFlag=false;
 				CameraFade.StartAlphaFade(Color.black, false, 3.0f, 0f,()=>{Application.LoadLevel("Game");});

@@ -96,6 +96,7 @@
      <Compile Include="Assets\Scripts\Game\Manager\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\TimeManager.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\UI_ChainManager.cs" />
+     <Compile Include="Assets\Scripts\Game\Manager\UI_NumberManager.cs" />
      <Compile Include="Assets\Scripts\Game\Manager\UI_ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Game\MoveWall\MoveWall.cs" />
      <Compile Include="Assets\Scripts\Game\MoveWall\OpenWall.cs" />

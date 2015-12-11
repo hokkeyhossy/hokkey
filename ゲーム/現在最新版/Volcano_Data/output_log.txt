@@ -12,7 +12,7 @@ Platform assembly: C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現�
 Loading C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\Volcano_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\Volcano_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\Volcano_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.109 seconds
+- Completed reload, in  0.070 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
@@ -20,10 +20,22 @@ desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
 Platform assembly: C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\Volcano_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\ths25012\Documents\GitProject\Hokkey\ゲーム\現在最新版\Volcano_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1500 -> priority: 1 
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.734523 ms
+  Thread -> id: 1778 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.838358 ms
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 464.
-Total: 0.330468 ms (FindLiveObjects: 0.043925 ms CreateObjectMapping: 0.062809 ms MarkObjects: 0.207312 ms  DeleteObjects: 0.014778 ms)
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 475.
+Total: 0.285721 ms (FindLiveObjects: 0.039409 ms CreateObjectMapping: 0.038999 ms MarkObjects: 0.193354 ms  DeleteObjects: 0.013136 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.774650 ms
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 338.
+Total: 0.366594 ms (FindLiveObjects: 0.032431 ms CreateObjectMapping: 0.034894 ms MarkObjects: 0.186786 ms  DeleteObjects: 0.111661 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.455676 ms
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 289.
+Total: 0.241796 ms (FindLiveObjects: 0.027915 ms CreateObjectMapping: 0.038999 ms MarkObjects: 0.159692 ms  DeleteObjects: 0.014778 ms)
 

@@ -23,7 +23,7 @@ public class GameOverMAnager : MonoBehaviour
 		}
 		
 		Item[NowChoiceItem].GetComponent <BlinkingObject>().Active();
-
+		AudioManager.Instance.PlayBGM("GameOverBGM");
 		CameraFade.StartAlphaFade(Color.black, true,2.0f, 0f,()=>ChengeFlag(true));
 	}
 	
@@ -34,6 +34,7 @@ public class GameOverMAnager : MonoBehaviour
 		{
 			if(Input.GetKeyDown(KeyCode.Return))
 			{
+				AudioManager.Instance.PlaySE("GameOverSELECT");
 				LiveFlag=false;
 				switch(NowChoiceItem)
 				{
@@ -49,6 +50,7 @@ public class GameOverMAnager : MonoBehaviour
 
 			if(Input.GetKeyDown(KeyCode.W))
 			{
+				AudioManager.Instance.PlaySE("GameOverSwitch");
 				NowChoiceItem--;
 				if(NowChoiceItem<0)
 				{
@@ -61,6 +63,7 @@ public class GameOverMAnager : MonoBehaviour
 
 			if(Input.GetKeyDown(KeyCode.S))
 			{
+				AudioManager.Instance.PlaySE("GameOverSwitch");
 				NowChoiceItem++;
 				if(NowChoiceItem==ItemLength)
 				{

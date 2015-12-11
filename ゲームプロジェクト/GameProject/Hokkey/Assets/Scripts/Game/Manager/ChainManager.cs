@@ -10,18 +10,22 @@ public class ChainManager : SingletonMonoBehaviour<ChainManager>
 	private float NowTime;
 
 	public float AlphaValue;
+
+	public float MaxCHain;
 	
 	// Use this for initialization
 	void Start () 
 	{
 		NowTime=chainTime;
 		MyScore=0;
+		MaxCHain=0;
 		AlphaValue=0;
 		if(this != Instance)
 		{
-			Destroy(this);
+			Destroy(this.gameObject);
 			return;
 		}
+		DontDestroyOnLoad(this.gameObject);
 	}
 
 	void Update()
@@ -39,6 +43,7 @@ public class ChainManager : SingletonMonoBehaviour<ChainManager>
 	{
 		NowTime=0;
 		AlphaValue=1;
+		if(Value>MaxCHain){MaxCHain=Value;}
 		MyScore=Value;
 		CheckLenge();
 	}
@@ -48,6 +53,7 @@ public class ChainManager : SingletonMonoBehaviour<ChainManager>
 		NowTime=0;
 		AlphaValue=1;
 		MyScore+=Value;
+		if(MyScore>MaxCHain){MaxCHain=MyScore;}
 		CheckLenge();
 	}
 	
@@ -60,6 +66,10 @@ public class ChainManager : SingletonMonoBehaviour<ChainManager>
 	public float GetScore()
 	{
 		return (MyScore);
+	}
+	public float GetMaxScore()
+	{
+		return (MaxCHain);
 	}
 	
 	void CheckLenge()

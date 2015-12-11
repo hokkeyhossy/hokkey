@@ -110,6 +110,7 @@ public class MoveObject : MonoBehaviour
 
 	public void PlayerDestroy()
 	{
+		AudioManager.Instance.PlaySE("PlayerDeath");
 		this.gameObject.GetComponent <Renderer>().enabled=false;
 		isDeath=true;
 		DeathTime=0;
@@ -125,7 +126,14 @@ public class MoveObject : MonoBehaviour
 			GameObject obj=GameObject.Find("GameManagerHolder");
 			
 			obj.GetComponent <GameManager>().GameCrea();
-			AudioManager.Instance.PlaySE("SE_HIT");
+		}
+
+		if(other.gameObject.name=="BGMSwitch")
+		{
+
+			AudioManager.Instance.StopBGM();
+			AudioManager.Instance.PlayBGM("GameBGM2");
+
 		}
 	
 	}

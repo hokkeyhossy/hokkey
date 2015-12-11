@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 		CameraFade.StartAlphaFade(Color.black, true,2.0f, 0f,()=>ChengeFlag(true));
 		RespornCnt=0;
 		vRespornCnt=0;
-		AudioManager.Instance.PlayBGM("BGM_TEST");
+		AudioManager.Instance.PlayBGM("GameBGM");
 	}
 	
 	// Update is called once per frame
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 				}
 			}
 
-			if(Input.GetKeyDown(KeyCode.Y))
+			if(Input.GetKeyDown(KeyCode.Y)||(ChainManager.Instance.GetScore()>9))
 			{
 				if(!isMax)
 				{

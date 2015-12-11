@@ -86,7 +86,7 @@ public class BallMove : MonoBehaviour
 
 		//if(other.gameObject.name=="Wall")
 		{
-			AudioManager.Instance.PlaySE("SE_HIT");
+			//AudioManager.Instance.PlaySE("SE_HIT");
 		}
 
 		if(other.gameObject.tag=="Floor")
@@ -105,14 +105,21 @@ public class BallMove : MonoBehaviour
 
 		if(other.gameObject.name=="Cylinder")
 		{
+			AudioManager.Instance.PlaySE("WallHit");
 			Vector3 PlayerPos=other.gameObject.GetComponent<Transform>().position;
 			Vector3 Spd=myRigid.transform.position-PlayerPos;
 			Spd*=18;
 			//myRigid.velocity=new Vector3(Spd.x,myRigid.velocity.y,Spd.z);
 		}
 
+		if(other.gameObject.tag=="Enemy")
+		{
+			AudioManager.Instance.PlaySE("EnemyHit");
+		}
+
 		if(other.gameObject.name=="Player")
 		{
+			AudioManager.Instance.PlaySE("PlayerHit");
 			Vector3 PlayerPos=other.gameObject.GetComponent<Transform>().position;
 			Vector3 Spd=myRigid.transform.position-PlayerPos;
 			Spd*=23;
@@ -124,7 +131,7 @@ public class BallMove : MonoBehaviour
 	{
 		if(other.tag=="DethPoint")
 		{
-			AudioManager.Instance.PlaySE("SE_YARARE");
+			//AudioManager.Instance.PlaySE("SE_YARARE");
 			//自身を破壊する
 			Destroy(this.gameObject);
 
